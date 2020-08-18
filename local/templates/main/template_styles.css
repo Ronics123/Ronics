@@ -1,0 +1,80 @@
+html, body, form
+{
+	margin: 0;
+	padding: 0;
+}
+
+html
+{
+	height:100%;
+}
+
+body
+{
+	height:auto !important;
+	height:100%;
+	min-height:100%;
+}
+
+/*Font*/
+body
+{
+	font-size: 12px;
+	font-family: Tahoma, Verdana, Helvetica, sans-serif;
+	color: #6e6a69;
+	background:#fff;
+	text-align: left;
+}
+
+h1
+{
+	margin:0; padding:0;
+	font-size: 22px;
+	margin-bottom:8px;
+	padding-bottom:15px;
+	padding-top:14px;
+	border-bottom:1px dashed #C4C4C3;
+}
+
+h2, h3
+{
+	font-size: 16px;
+}
+
+/*Font in table*/
+table
+{
+	font-size:100%;
+}
+
+/*Links*/
+a:link {color: #2775C7;}
+a:visited{color:#8FA4BA;}
+a:active {color: #2775CC;}
+a:hover{color:#CF1C3E;}
+
+.table_main {
+	width: 900px;
+	margin: 0 0 0 10px;
+}
+
+.main {
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+.content {
+	padding-bottom: 50px;
+}
+
+.table_main td {
+	padding: 5px 10px;
+}
+
+.box_padding {
+	padding: 15px 0;
+}
+
+.form_group {
+	margin-bottom: 10px;
+}
