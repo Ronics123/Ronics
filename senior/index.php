@@ -47,9 +47,24 @@ $APPLICATION->SetTitle("Уровень senior");
             LEFT JOIN b_iblock_element_property BEPE ON (BEPE.IBLOCK_ELEMENT_ID = BE.ID)
             WHERE
             ( ((((BE.IBLOCK_ID = '33')))) AND ((((BE.ACTIVE='Y')))) )
-            AND (((BE.WF_STATUS_ID=1 AND BE.WF_PARENT_ELEMENT_ID IS NULL))) ;</h2>
+            AND (((BE.WF_STATUS_ID=1 AND BE.WF_PARENT_ELEMENT_ID IS NULL)));
+        </h2>
         <div>
-
+            Оптимилизированный запрос: <br>
+            SELECT BEPE.VALUE as PROP_VALUE, BEPE.ID as PROP_ID,
+            BE.NAME as NAME,
+            IF(EXTRACT(HOUR_SECOND FROM BE.ACTIVE_FROM)>0, DATE_FORMAT(BE.ACTIVE_FROM, '%d.%m.%Y %H:%i:%s'),
+            DATE_FORMAT(BE.ACTIVE_FROM, '%d.%m.%Y')) as DATE_ACTIVE_FROM,
+            BE.IBLOCK_ID as IBLOCK_ID
+            FROM
+            b_iblock_element BE
+            LEFT JOIN b_iblock_element_property BEPE ON (BEPE.IBLOCK_ELEMENT_ID = BE.ID)
+            WHERE
+            ( BE.IBLOCK_ID = '33' AND BE.ACTIVE='Y' )
+            AND (BE.WF_STATUS_ID=1 AND BE.WF_PARENT_ELEMENT_ID IS NULL);
+            <br>
+            Список колонок после оптимилизации:
+            PROP_VALUE, PROP_ID, NAME, DATE_ACTIVE_FROM, IBLOCK_ID
         </div>
     </div>
     <div>
