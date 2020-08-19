@@ -53,9 +53,13 @@ $APPLICATION->SetTitle("Уровень senior");
         </div>
     </div>
     <div>
-        <h2>4) Напишите http запрос из браузера клиента, который обращается к адресу /url/5/ и ответ на php странице по этому адресу, которая должна вернуть JSON строку вида: {"ID":5, "ELEMENT_ID":20, "NAME":"Volk", "PARENTS":[0,1]} . Ответ вернувшийся от сервера необходимо обработать и вывести поле NAME в HTML элемент страницы с тегом input и атрибутом name равным Volk.</h2>
+        <h2>4) Напишите http запрос из браузера клиента, который обращается к адресу /url/5/ и ответ на php странице по этому адресу, которая должна вернуть
+            JSON строку вида: {"ID":5, "ELEMENT_ID":20, "NAME":"Volk", "PARENTS":[0,1]}.
+            Ответ вернувшийся от сервера необходимо обработать и вывести поле NAME в HTML элемент страницы с тегом input и атрибутом name равным Volk.
+        </h2>
         <div>
-
+            <input type="button" onclick="setVolk(5);" value="Сделать запрос">
+            <input type="text" name="Volk" value="" disabled="disabled">
         </div>
     </div>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
