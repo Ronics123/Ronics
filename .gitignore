@@ -5,5 +5,3 @@
 /hook/*
 *.log
 /bitrix/backup/*
-/bitrix/.settings.php
-/bitrix/php_interface/dbconn.php
